@@ -51,11 +51,11 @@
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
-    variant = "intl";
+    variant = "";
   };
 
   # Configure console keymap
-  console.keyMap = "us-acentos";
+  console.keyMap = "us";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -111,6 +111,9 @@
     gh
     home-manager
     nerd-fonts.jetbrains-mono
+    nix-index
+    gnomeExtensions.appindicator
+    gnomeExtensions.runcat
     tmux
     wget
     git
