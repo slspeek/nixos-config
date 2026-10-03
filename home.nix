@@ -8,6 +8,9 @@
     enable = true;
     shellAliases = {
       btw = "echo I run nixos, btw";
+      ll = "ls -l";
+      la = "ls -a";
+      nxs = "nix search nixpkgs";
     };
   };
 
