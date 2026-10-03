@@ -20,6 +20,7 @@
     "nix-command"
     "flakes"
   ];
+  home-manager.backupFileExtension = "backup";
   networking.hostName = "nixos-steven"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -116,7 +117,7 @@
     alacritty
     alejandra
     gh
-    home-manager
+    # home-manager
     nerd-fonts.jetbrains-mono
     nix-index
     nixfmt
