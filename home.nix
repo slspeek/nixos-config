@@ -39,13 +39,13 @@
   };
   programs.vscode = {
     enable = true;
-    extensions = [
-      "jnoortheen.nix-ide"
+    extensions = with pkgs.vscode-extensions; [
+      jnoortheen.nix-ide # or bbenoist.nix for the classic extension
     ];
-    # settings = {
-    #       "nix.enableLanguageServer": true,
-    # "nix.serverPath": "nixd",
-    # "nix.serverSettings": {
+    userSettings = {
+      "nix.enableLanguageServer" = true;
+      "nix.serverPath" = "nixd"; 
+    #   "nix.serverSettings": {
     #     "nixd": {
     #         "options": {
     #             "home-manager": {
@@ -54,8 +54,7 @@
     #         }
     #     }
     # },
-    # "git.autofetch": true,
-    # };
+    };
   };
   programs.bash = {
     enable = true;
