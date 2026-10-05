@@ -37,6 +37,26 @@
       set -s set-clipboard on
     '';
   };
+  programs.vscode = {
+    enable = true;
+    extensions = [
+      "jnoortheen.nix-ide"
+    ];
+    # settings = {
+    #       "nix.enableLanguageServer": true,
+    # "nix.serverPath": "nixd",
+    # "nix.serverSettings": {
+    #     "nixd": {
+    #         "options": {
+    #             "home-manager": {
+    #                 "expr": "(builtins.getFlake (builtins.toString ./. )).nixosConfigurations.\"nixos-steven\".options.home-manager.users.type.getSubOptions []"
+    #             }
+    #         }
+    #     }
+    # },
+    # "git.autofetch": true,
+    # };
+  };
   programs.bash = {
     enable = true;
     shellAliases = {
