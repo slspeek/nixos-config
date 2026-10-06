@@ -39,22 +39,28 @@
   };
   programs.vscode = {
     enable = true;
-    extensions = with pkgs.vscode-extensions; [
-      jnoortheen.nix-ide # or bbenoist.nix for the classic extension
-    ];
-    userSettings = {
-      "nix.enableLanguageServer" = true;
-      "nix.serverPath" = "nixd"; 
-    #   "nix.serverSettings": {
-    #     "nixd": {
-    #         "options": {
-    #             "home-manager": {
-    #                 "expr": "(builtins.getFlake (builtins.toString ./. )).nixosConfigurations.\"nixos-steven\".options.home-manager.users.type.getSubOptions []"
-    #             }
-    #         }
-    #     }
-    # },
+    profiles.default = {
+      extensions = with pkgs.vscode-extensions; [
+        jnoortheen.nix-ide # or bbenoist.nix for the classic extension
+      ];
+      userSettings = {
+        "nix.enableLanguageServer" = true;
+        "nix.serverPath" = "nixd";
+        "nix.serverSettings" = {
+          "nixd" = {
+            "options" = {
+              "home-manager" = {
+                "expr" =
+                  "(builtins.getFlake (builtins.toString ./. )).nixosConfigurations.\"nixos-steven\".options.home-manager.users.type.getSubOptions []";
+              };
+            };
+          };
+        };
+        "git.autofetch" = true;
+        "git.confirmSync" = false;
+      };
     };
+
   };
   programs.bash = {
     enable = true;
