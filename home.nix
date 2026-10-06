@@ -68,6 +68,9 @@
       btw = "echo I run nixos, btw";
       ll = "ls -l";
       la = "ls -a";
+      v = "nvim";
+      vi = "nvim";
+      vim = "nvim";
       reb = "sudo nixos-rebuild switch --impure --flake ~/proj/nixos-config";
       nxs = "nix search nixpkgs";
     };
