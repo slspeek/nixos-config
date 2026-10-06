@@ -53,6 +53,10 @@
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
+  # TODO: Move into separate host-specific configuration file
+  services.spice-vdagentd.enable = true;
+  services.qemuGuest.enable = true;
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
