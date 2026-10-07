@@ -5,8 +5,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   imports = [
     # Include the results of the hardware scan.
     /etc/nixos/hardware-configuration.nix
@@ -15,7 +14,7 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  
+
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -98,11 +97,11 @@
   };
   security.sudo.extraRules = [
     {
-      groups = [ "wheel" ];
+      groups = ["wheel"];
       commands = [
         {
           command = "ALL";
-          options = [ "NOPASSWD" ];
+          options = ["NOPASSWD"];
         }
       ];
     }
@@ -126,6 +125,7 @@
     nix-index
     nixfmt
     nixd
+    nil
     gnomeExtensions.appindicator
     gnomeExtensions.runcat
     tmux

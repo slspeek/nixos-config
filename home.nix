@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
-
+{
+  config,
+  pkgs,
+  ...
+}:
 {
   home.username = "steven";
   home.homeDirectory = "/home/steven";
@@ -14,6 +17,8 @@
       };
     };
   };
+  xdg.configFile."nvim".source = /home/steven/proj/nixos-config/config/nvim;
+  
   programs.fzf = {
     enable = true;
   };
@@ -60,7 +65,6 @@
         "git.confirmSync" = false;
       };
     };
-
   };
   programs.bash = {
     enable = true;
