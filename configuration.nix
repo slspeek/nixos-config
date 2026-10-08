@@ -116,37 +116,39 @@
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     alacritty
     alejandra
-    gh
-    # home-manager
-    nerd-fonts.jetbrains-mono
-    nix-index
-    nixfmt
-    nixd
-    nil
-    gnomeExtensions.appindicator
-    gnomeExtensions.runcat
-    tmux
-    wget
-    git
-    ripgrep
-    lolcat
     bat
     curl
+    dysk
     fd
+    file
     fzf
+    gh
+    git
+    gnomeExtensions.appindicator
+    gnomeExtensions.runcat
+    # home-manager
     just
     lazygit
+    lolcat
     lsd
+    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    nerd-fonts.jetbrains-mono
+    nil
+    nixd
+    nixfmt
+    nix-index
+    ripgrep
     shellcheck
     shfmt
     starship
     stow
     tealdeer
-    vscode
+    tmux
     trash-cli
+    vscode
+    wget
     wl-clipboard
     zoxide
     zsh

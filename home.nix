@@ -2,8 +2,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   home.username = "steven";
   home.homeDirectory = "/home/steven";
   programs.git = {
@@ -18,13 +17,13 @@
     };
   };
   xdg.configFile."nvim".source = /home/steven/proj/nixos-config/config/nvim;
-  
+
   programs.fzf = {
     enable = true;
   };
   programs.zoxide = {
     enable = true;
-    options = [ "--cmd cd" ];
+    options = ["--cmd cd"];
   };
   programs.starship = {
     enable = true;
@@ -55,8 +54,7 @@
           "nixd" = {
             "options" = {
               "home-manager" = {
-                "expr" =
-                  "(builtins.getFlake (builtins.toString ./. )).nixosConfigurations.\"nixos-steven\".options.home-manager.users.type.getSubOptions []";
+                "expr" = "(builtins.getFlake (builtins.toString ./. )).nixosConfigurations.\"nixos-steven\".options.home-manager.users.type.getSubOptions []";
               };
             };
           };
@@ -70,6 +68,8 @@
     enable = true;
     shellAliases = {
       btw = "echo I run nixos, btw";
+      vc = "cd ~/proj/nixos-config/ && nvim configuration.nix";
+      vh = "cd ~/proj/nixos-config/ && nvim home.nix";
       ll = "ls -l";
       la = "ls -a";
       v = "nvim";
@@ -79,6 +79,10 @@
       nxs = "nix search nixpkgs";
     };
     initExtra = ''
+      use() {
+        mkdir "$1" && cd "$1"
+      }
+
       if command -v tmux &> /dev/null &&
           [ -n "$PS1" ] && [ -z "$TMUX" ] &&
           [ "$TERM_PROGRAM" != "vscode" ]; then
