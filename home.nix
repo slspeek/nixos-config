@@ -3,6 +3,7 @@
   pkgs,
   ...
 }: {
+  imports = [./gnome-shortcuts.nix];
   home.username = "steven";
   home.homeDirectory = "/home/steven";
   programs.git = {
@@ -70,6 +71,8 @@
       btw = "echo I run nixos, btw";
       vc = "cd ~/proj/nixos-config/ && nvim configuration.nix";
       vh = "cd ~/proj/nixos-config/ && nvim home.nix";
+      ls = "lsd";
+      tree = "lsd --tree";
       ll = "ls -l";
       la = "ls -a";
       v = "nvim";
@@ -92,6 +95,48 @@
       fi
     '';
   };
-
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      "font" = {
+        "bold" = {
+          "family" = "JetBrainsMono Nerd Font";
+          "style" = "Bold";
+        };
+        "bold_italic" = {
+          "family" = "JetBrainsMono Nerd Font";
+          "style" = "Bold Italic";
+        };
+        "italic" = {
+          "family" = "JetBrainsMono Nerd Font";
+          "style" = "Italic";
+        };
+        "normal" = {
+          "family" = "JetBrainsMono Nerd Font";
+          "style" = "Regular";
+        };
+        "size" = 17.0;
+      };
+      "window" = {
+        "decorations" = "Full";
+        "decorations_theme_variant" = "Dark";
+        "opacity" = 0.95;
+        "padding" = {
+          "x" = 10;
+          "y" = 10;
+        };
+      };
+    };
+  };
+  dconf.enable = true;
+  dconf.settings = {
+    "org/gnome/shell" = {
+      favorite-apps = [
+        "firefox.desktop"
+        "code.desktop"
+        "Alacritty.desktop"
+      ];
+    };
+  };
   home.stateVersion = "26.05";
 }
