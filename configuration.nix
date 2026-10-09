@@ -146,6 +146,7 @@
     stow
     tealdeer
     tmux
+    gnome-tweaks
     trash-cli
     vscode
     wget
