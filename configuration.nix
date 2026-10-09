@@ -62,6 +62,8 @@
     variant = "";
   };
 
+  services.ollama.enable = true;
+
   # Configure console keymap
   console.keyMap = "us";
 
@@ -124,6 +126,10 @@
     dysk
     fd
     file
+    lshw
+    inxi
+    fastfetch
+    lsof
     fzf
     gh
     git
@@ -140,7 +146,6 @@
     nixd
     nixfmt
     nix-index
-    ollama
     ripgrep
     shellcheck
     shfmt
