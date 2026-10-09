@@ -120,6 +120,7 @@
     alejandra
     bat
     curl
+    dconf2nix
     dysk
     fd
     file
@@ -128,17 +129,18 @@
     git
     gnomeExtensions.appindicator
     gnomeExtensions.runcat
-    # home-manager
+    gnome-tweaks
     just
     lazygit
     lolcat
     lsd
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    neovim
     nerd-fonts.jetbrains-mono
     nil
     nixd
     nixfmt
     nix-index
+    ollama
     ripgrep
     shellcheck
     shfmt
@@ -146,7 +148,7 @@
     stow
     tealdeer
     tmux
-    gnome-tweaks
+    toml2nix
     trash-cli
     vscode
     wget
