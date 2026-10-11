@@ -4,6 +4,7 @@
   dconf.settings = {
     "org/gnome/settings-daemon/plugins/media-keys" = {
       control-center = ["<Super>i"];
+      #TODO: use https://discourse.nixos.org/t/nixos-options-to-configure-gnome-keyboard-shortcuts/7275/6
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
