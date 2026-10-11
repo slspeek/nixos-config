@@ -1,6 +1,6 @@
 # Generated via dconf2nix: https://github.com/gvolpe/dconf2nix
-{lib, ...}:
-with lib.hm.gvariant; {
+{...}:
+  {
   dconf.settings = {
     "org/gnome/settings-daemon/plugins/media-keys" = {
       control-center = ["<Super>i"];
@@ -65,7 +65,7 @@ with lib.hm.gvariant; {
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7" = {
       binding = "<Shift><Super>d";
-      command = "/usr/local/bin/gnome-dark-theme-toggle.sh";
+      command = "toggle-gnome-theme";
       name = "Donker thema aan/uit";
     };
   };
