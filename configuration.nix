@@ -1,14 +1,18 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     # Include the results of the hardware scan.
     /etc/nixos/hardware-configuration.nix
   ];
+
+  console = {
+    earlySetup = true;
+    packages = with pkgs; [terminus_font];
+    # "ter-v32n" is a large, highly readable font for HiDPI displays
+    font = "ter-v32n";
+  };
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -93,7 +97,7 @@
       "wheel"
     ];
   };
-  
+
   security.sudo.extraRules = [
     {
       groups = ["wheel"];
