@@ -136,6 +136,15 @@
         "code.desktop"
         "Alacritty.desktop"
       ];
+      disable-user-extensions = false; # Must be false to allow extensions
+      enabled-extensions = [
+        pkgs.gnomeExtensions.gsconnect.extensionUuid
+        pkgs.gnomeExtensions.runcat.extensionUuid
+        pkgs.gnomeExtensions.appindicator.extensionUuid
+      ];
+    };
+    "org/gnome/shell/extensions/runcat" = {
+      displaying-items = "percentage-only";
     };
   };
   home.stateVersion = "26.05";
