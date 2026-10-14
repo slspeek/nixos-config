@@ -146,6 +146,9 @@
     "org/gnome/shell/extensions/runcat" = {
       displaying-items = "percentage-only";
     };
+    "org/gnome/desktop/screensaver" = {
+      lock-enabled = false;
+    };
   };
   home.stateVersion = "26.05";
 }
