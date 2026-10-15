@@ -1,7 +1,8 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   imports = [
     # Include the results of the hardware scan.
     /etc/nixos/hardware-configuration.nix
@@ -9,7 +10,7 @@
 
   console = {
     earlySetup = true;
-    packages = with pkgs; [terminus_font];
+    packages = with pkgs; [ terminus_font ];
     # "ter-v32n" is a large, highly readable font for HiDPI displays
     font = "ter-v32n";
   };
@@ -19,7 +20,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   environment.sessionVariables = {
-    NH_FLAKE="/home/steven/proj/nixos-config";
+    NH_FLAKE = "/home/steven/proj/nixos-config";
   };
 
   nix.settings.experimental-features = [
@@ -100,15 +101,16 @@
       "networkmanager"
       "wheel"
     ];
+    initialPassword = "s";
   };
 
   security.sudo.extraRules = [
     {
-      groups = ["wheel"];
+      groups = [ "wheel" ];
       commands = [
         {
           command = "ALL";
-          options = ["NOPASSWD"];
+          options = [ "NOPASSWD" ];
         }
       ];
     }
@@ -118,7 +120,40 @@
     package = pkgs.gnomeExtensions.gsconnect;
   };
   # Install firefox.
-  programs.firefox.enable = true;
+  programs.firefox = {
+    enable = true;
+
+    # Installeer het Nederlandse taalpakket
+    languagePacks = [
+      "nl"
+      "en-US"
+    ];
+
+    # Configureer policies om de interface en spelling naar het Nederlands te dwingen
+    policies = {
+      # Stelt de taal van de gebruikersomgeving in op Nederlands (met Engels als fallback)
+      RequestedLocales = [
+        "nl"
+        "en-US"
+      ];
+
+      ExtensionSettings = {
+        # ID van de officiële OpenTaal extensie "Woordenboek Nederlands" op AMO
+        "nl-NL@dictionaries.addons.mozilla.org" = {
+          installation_mode = "force_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/woordenboek-nederlands/latest.xpi";
+        };
+      };
+      
+      Preferences = {
+        # Accepteer zowel Nederlands als Engels voor content en spelling
+        "intl.accept_languages" = "nl,en-US,en";
+
+        # Schakel automatische spellingcontrole in (waarde 2 betekent ingeschakeld met multi-language ondersteuning in moderne Firefox versies)
+        "layout.spellcheckDefault" = 2;
+      };
+    };
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -126,7 +161,7 @@
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
-    (pkgs.callPackage ./scripts/toggle-gnome-theme.nix {})
+    (pkgs.callPackage ./scripts/toggle-gnome-theme.nix { })
     alacritty
     alejandra
     bat
