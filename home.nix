@@ -78,7 +78,7 @@
       v = "nvim";
       vi = "nvim";
       vim = "nvim";
-      nrs = "sudo nixos-rebuild switch --impure --flake ~/proj/nixos-config";
+      nrs = "nh os switch --impure";
       nxs = "nix search nixpkgs";
     };
     initExtra = ''
