@@ -18,6 +18,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  environment.sessionVariables = {
+    NH_FLAKE="/home/steven/proj/nixos-config";
+  };
+
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -147,10 +151,13 @@
     lsd
     neovim
     nerd-fonts.jetbrains-mono
+    nh
     nil
     nixd
     nixfmt
+    nix-output-monitor
     nix-index
+    nvd
     ripgrep
     shellcheck
     shfmt
