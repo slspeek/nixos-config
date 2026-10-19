@@ -27,6 +27,21 @@
     "nix-command"
     "flakes"
   ];
+
+  virtualisation.vmVariant = {
+    virtualisation = {
+      memorySize = 4096; # 4 GB RAM voor een soepele desktop
+      cores = 4;        # 4 CPU-cores
+      
+      # Optioneel: Schakel KVM hardware-versnelling in op de host (aanbevolen!)
+      # QEMU gebruikt hierdoor de CPU-extensies van je host-systeem.
+      qemu.options = [
+        "-enable-kvm"
+        "-cpu host"
+      ];
+    };
+  };
+  
   home-manager.backupFileExtension = "backup";
   networking.hostName = "nixos-steven"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
