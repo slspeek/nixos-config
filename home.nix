@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   ...
 }: {
@@ -148,6 +147,9 @@
     };
     "org/gnome/desktop/screensaver" = {
       lock-enabled = false;
+    };
+    "org/gnome/desktop/interface" = {
+      enable-hot-corners = false;
     };
   };
   home.stateVersion = "26.05";
