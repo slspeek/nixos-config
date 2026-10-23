@@ -1,8 +1,7 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   imports = [
     # Include the results of the hardware scan.
     /etc/nixos/hardware-configuration.nix
@@ -10,7 +9,7 @@
 
   console = {
     earlySetup = true;
-    packages = with pkgs; [ terminus_font ];
+    packages = with pkgs; [terminus_font];
     # "ter-v32n" is a large, highly readable font for HiDPI displays
     font = "ter-v32n";
   };
@@ -31,8 +30,8 @@
   virtualisation.vmVariant = {
     virtualisation = {
       memorySize = 4096; # 4 GB RAM voor een soepele desktop
-      cores = 4;        # 4 CPU-cores
-      
+      cores = 4; # 4 CPU-cores
+
       # Optioneel: Schakel KVM hardware-versnelling in op de host (aanbevolen!)
       # QEMU gebruikt hierdoor de CPU-extensies van je host-systeem.
       qemu.options = [
@@ -41,7 +40,7 @@
       ];
     };
   };
-  
+
   home-manager.backupFileExtension = "backup";
   networking.hostName = "nixos-steven"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -121,11 +120,11 @@
 
   security.sudo.extraRules = [
     {
-      groups = [ "wheel" ];
+      groups = ["wheel"];
       commands = [
         {
           command = "ALL";
-          options = [ "NOPASSWD" ];
+          options = ["NOPASSWD"];
         }
       ];
     }
@@ -159,7 +158,7 @@
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/woordenboek-nederlands/latest.xpi";
         };
       };
-      
+
       Preferences = {
         # Accepteer zowel Nederlands als Engels voor content en spelling
         "intl.accept_languages" = "nl,en-US,en";
@@ -176,7 +175,7 @@
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
-    (pkgs.callPackage ./scripts/toggle-gnome-theme.nix { })
+    (pkgs.callPackage ./scripts/toggle-gnome-theme.nix {})
     alacritty
     alejandra
     bat
@@ -211,6 +210,7 @@
     ripgrep
     shellcheck
     shfmt
+    showmethekey
     starship
     stow
     tealdeer
