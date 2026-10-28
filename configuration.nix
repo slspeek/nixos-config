@@ -41,6 +41,10 @@
     };
   };
 
+  virtualisation.docker = {
+    enable = true;
+  };
+
   home-manager.backupFileExtension = "backup";
   networking.hostName = "nixos-steven"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -112,6 +116,7 @@
     isNormalUser = true;
     description = "Steven Speek";
     extraGroups = [
+      "docker"
       "networkmanager"
       "wheel"
     ];
@@ -179,6 +184,7 @@
     alacritty
     alejandra
     bat
+    bc
     curl
     dconf2nix
     dysk
@@ -194,10 +200,12 @@
     gnomeExtensions.appindicator
     gnomeExtensions.runcat
     gnome-tweaks
+    html2text
     just
     lazygit
     lolcat
     lsd
+    gnumake
     neovim
     nerd-fonts.jetbrains-mono
     nh
@@ -207,6 +215,7 @@
     nix-output-monitor
     nix-index
     nvd
+    python3
     ripgrep
     shellcheck
     shfmt
