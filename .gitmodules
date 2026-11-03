@@ -1,3 +1,6 @@
-[submodule "config/nvim"]
-	path = config/nvim
-	url = https://github.com/tonybanters/nvim
+[submodule "nvim"]
+	path = nvim
+	url = git@github.com:slspeek/nvim.git
+[submodule "config/config/nvim"]
+	path = config/config/nvim
+	url = git@github.com:slspeek/nvim

@@ -1,8 +1,10 @@
 {
   pkgs,
+  config,
   ...
-}: {
-  imports = [./gnome-shortcuts.nix];
+}:
+{
+  imports = [ ./gnome-shortcuts.nix ];
   home.username = "steven";
   home.homeDirectory = "/home/steven";
   programs.git = {
@@ -16,14 +18,19 @@
       };
     };
   };
-  xdg.configFile."nvim".source = /home/steven/proj/nixos-config/config/nvim;
+
+  home.file.".config/nvim" = {
+    # Hiermee ga je één map omhoog en dan naar config/nvim
+    source = config.lib.file.mkOutOfStoreSymlink /home/steven/proj/nixos-config/config/nvim;
+    recursive = true;
+  };
 
   programs.fzf = {
     enable = true;
   };
   programs.zoxide = {
     enable = true;
-    options = ["--cmd cd"];
+    options = [ "--cmd cd" ];
   };
   programs.starship = {
     enable = true;
@@ -54,7 +61,8 @@
           "nixd" = {
             "options" = {
               "home-manager" = {
-                "expr" = "(builtins.getFlake (builtins.toString ./. )).nixosConfigurations.\"nixos-steven\".options.home-manager.users.type.getSubOptions []";
+                "expr" =
+                  "(builtins.getFlake (builtins.toString ./. )).nixosConfigurations.\"nixos-steven\".options.home-manager.users.type.getSubOptions []";
               };
             };
           };
