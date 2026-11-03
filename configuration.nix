@@ -1,7 +1,8 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -9,7 +10,7 @@
 
   console = {
     earlySetup = true;
-    packages = with pkgs; [terminus_font];
+    packages = with pkgs; [ terminus_font ];
     # "ter-v32n" is a large, highly readable font for HiDPI displays
     font = "ter-v32n";
   };
@@ -125,11 +126,11 @@
 
   security.sudo.extraRules = [
     {
-      groups = ["wheel"];
+      groups = [ "wheel" ];
       commands = [
         {
           command = "ALL";
-          options = ["NOPASSWD"];
+          options = [ "NOPASSWD" ];
         }
       ];
     }
@@ -180,7 +181,7 @@
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
-    (pkgs.callPackage ./scripts/toggle-gnome-theme.nix {})
+    (pkgs.callPackage ./scripts/toggle-gnome-theme.nix { })
     alacritty
     alejandra
     bat

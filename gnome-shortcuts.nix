@@ -1,9 +1,9 @@
 # Generated via dconf2nix: https://github.com/gvolpe/dconf2nix
-{...}:
-  {
+{ ... }:
+{
   dconf.settings = {
     "org/gnome/settings-daemon/plugins/media-keys" = {
-      control-center = ["<Super>i"];
+      control-center = [ "<Super>i" ];
       #TODO: use https://discourse.nixos.org/t/nixos-options-to-configure-gnome-keyboard-shortcuts/7275/6
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
@@ -15,11 +15,11 @@
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/"
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/"
       ];
-      decrease-text-size = ["<Super>minus"];
-      home = ["<Super>e"];
-      increase-text-size = ["<Super>equal"];
-      logout = [];
-      shutdown = ["<Control><Alt>Delete"];
+      decrease-text-size = [ "<Super>minus" ];
+      home = [ "<Super>e" ];
+      increase-text-size = [ "<Super>equal" ];
+      logout = [ ];
+      shutdown = [ "<Control><Alt>Delete" ];
     };
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {

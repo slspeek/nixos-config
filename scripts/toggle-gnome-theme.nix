@@ -1,12 +1,14 @@
-{ pkgs ? import <nixpkgs> {} }:
+{
+  pkgs ? import <nixpkgs> { },
+}:
 
 pkgs.writeShellApplication {
   name = "toggle-gnome-theme";
-  
+
   # Voeg de pakketten toe die nodig zijn voor gsettings en notify-send[cite: 1]
-  runtimeInputs = [ 
-    pkgs.glib 
-    pkgs.libnotify 
+  runtimeInputs = [
+    pkgs.glib
+    pkgs.libnotify
   ];
 
   text = ''
