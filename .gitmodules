@@ -6,4 +6,4 @@
 	url = git@github.com:slspeek/nvim
 [submodule "config/nvim"]
 	path = config/nvim
-	url = git@github.com:slspeek/nvim
+	url = git@github.com:slspeek/nvim.git
