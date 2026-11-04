@@ -76,8 +76,10 @@
     enable = true;
     shellAliases = {
       btw = "echo I run nixos, btw";
-      vc = "cd ~/proj/nixos-config/ && nvim configuration.nix";
-      vh = "cd ~/proj/nixos-config/ && nvim home.nix";
+      vc = "cd ~/proj/nixos-config/ && nvim modules/hosts/nixos-steven/configuration.nix";
+      vh = "cd ~/proj/nixos-config/ && nvim modules/hosts/nixos-steven/home.nix";
+      nfc = "nix flake check .";
+      nf = "nix fmt .";
       ls = "lsd";
       tree = "lsd --tree";
       ll = "ls -l";
