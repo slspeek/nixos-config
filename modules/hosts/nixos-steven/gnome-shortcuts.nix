@@ -1,6 +1,4 @@
-# Generated via dconf2nix: https://github.com/gvolpe/dconf2nix
-{ ... }:
-{
+_: {
   dconf.settings = {
     "org/gnome/settings-daemon/plugins/media-keys" = {
       control-center = [ "<Super>i" ];
