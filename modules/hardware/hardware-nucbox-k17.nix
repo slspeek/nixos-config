@@ -1,0 +1,48 @@
+_: {
+  flake.modules.nixos.hardware-nucbox-k17 =
+    {
+      config,
+      lib,
+      modulesPath,
+      ...
+    }:
+    {
+      imports = [
+        (modulesPath + "/installer/scan/not-detected.nix")
+      ];
+
+      boot.initrd.availableKernelModules = [
+        "xhci_pci"
+        "thunderbolt"
+        "nvme"
+        "usbhid"
+        "usb_storage"
+        "sd_mod"
+      ];
+      boot.initrd.kernelModules = [ ];
+      boot.kernelModules = [ "kvm-intel" ];
+      boot.extraModulePackages = [ ];
+
+      fileSystems."/" = {
+        device = "/dev/disk/by-uuid/04ca7904-4b66-4900-93c1-44c7c638e2c4";
+        fsType = "ext4";
+      };
+
+      fileSystems."/boot" = {
+        device = "/dev/disk/by-uuid/CA2E-2D46";
+        fsType = "vfat";
+        options = [
+          "fmask=0077"
+          "dmask=0077"
+        ];
+      };
+
+      swapDevices = [
+        { device = "/dev/disk/by-uuid/af1c6f52-e35d-4231-ba8f-a4971eb8e7f9"; }
+      ];
+
+      nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+      hardware.cpu.intel.npu.enable = true;
+      hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    };
+}

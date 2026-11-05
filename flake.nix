@@ -19,13 +19,5 @@
 
   };
 
-  outputs =
-    inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [
-        ./modules/hosts/nixos-steven/default.nix
-        ./modules/flake-parts/formatter.nix
-        ./modules/flake-parts/flake-parts.nix
-      ];
-    };
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 }
