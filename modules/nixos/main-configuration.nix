@@ -2,11 +2,6 @@ inputs: {
   flake.modules.nixos.main-configuration =
     { pkgs, ... }:
     {
-      imports = [
-        # Include the results of the hardware scan.
-        inputs.self.modules.nixos.hardware-nucbox-k17
-      ];
-
       console = {
         earlySetup = true;
         packages = with pkgs; [ terminus_font ];

@@ -6,6 +6,7 @@
         networking.hostName = "nixos-k17"; # Define your hostname.
       }
       inputs.self.modules.nixos.main-configuration
+      inputs.self.modules.nixos.hardware-nucbox-k17
       inputs.home-manager.nixosModules.home-manager
       {
         home-manager = {
