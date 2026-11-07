@@ -64,7 +64,7 @@ inputs: {
                 "options" = {
                   "home-manager" = {
                     "expr" =
-                      "(builtins.getFlake (builtins.toString ./. )).nixosConfigurations.\"nixos-steven\".options.home-manager.users.type.getSubOptions []";
+                      "(builtins.getFlake (builtins.toString ./. )).nixosConfigurations.\"nixos-k17\".options.home-manager.users.type.getSubOptions []";
                   };
                 };
               };
@@ -78,8 +78,8 @@ inputs: {
         enable = true;
         shellAliases = {
           btw = "echo I run nixos, btw";
-          vc = "cd ~/proj/nixos-config/ && nvim modules/hosts/nixos-steven/configuration.nix";
-          vh = "cd ~/proj/nixos-config/ && nvim modules/hosts/nixos-steven/home.nix";
+          vc = "cd ~/proj/nixos-config/ && nvim modules/nixos/main-configuration.nix";
+          vh = "cd ~/proj/nixos-config/ && nvim modules/home/home-steven.nix";
           nfc = "nix flake check .";
           nf = "nix fmt .";
           ls = "lsd";
