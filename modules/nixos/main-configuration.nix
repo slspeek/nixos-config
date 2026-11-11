@@ -17,10 +17,13 @@ inputs: {
         NH_FLAKE = "/home/steven/proj/nixos-config";
       };
 
-      nix.settings.experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
+      nix.settings = {
+        trusted-users = [ "steven" ];
+        experimental-features = [
+          "nix-command"
+          "flakes"
+        ];
+      };
 
       virtualisation.vmVariant = {
         virtualisation = {
