@@ -1,6 +1,6 @@
-inputs: {
+_inputs: {
   flake.modules.nixos.main-configuration =
-    { pkgs, ... }:
+    { pkgs, inputs, ... }:
     {
       console = {
         earlySetup = true;
@@ -135,6 +135,10 @@ inputs: {
         enable = true;
         package = pkgs.gnomeExtensions.gsconnect;
       };
+      programs.neovim = {
+        enable = true;
+        package = inputs.personal-nvf.packages.${pkgs.stdenv.hostPlatform.system}.default;
+      };
       # Install firefox.
       programs.firefox = {
         enable = true;
@@ -203,7 +207,6 @@ inputs: {
         lolcat
         lsd
         gnumake
-        neovim
         nerd-fonts.jetbrains-mono
         nh
         nil

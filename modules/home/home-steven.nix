@@ -69,18 +69,16 @@ inputs: {
       programs.bash = {
         enable = true;
         shellAliases = {
-          btw = "echo I run nixos, btw";
           vc = "cd ~/proj/nixos-config/ && nvim modules/nixos/main-configuration.nix";
           vh = "cd ~/proj/nixos-config/ && nvim modules/home/home-steven.nix";
           nfc = "nix flake check .";
+          nfs = "nix flake show";
           nf = "nix fmt .";
           ls = "lsd";
           tree = "lsd --tree";
           ll = "ls -l";
           la = "ls -a";
           v = "nvim";
-          vi = "nvim";
-          vim = "nvim";
           nrs = "nh os switch";
           nxs = "nix search nixpkgs";
         };

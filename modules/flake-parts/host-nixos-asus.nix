@@ -1,6 +1,7 @@
 { inputs, ... }:
 {
   flake.nixosConfigurations.nixos-asus = inputs.nixpkgs.lib.nixosSystem {
+    specialArgs = { inherit inputs; };
     modules = [
       {
         networking.hostName = "nixos-asus"; # Define your hostname.
