@@ -155,6 +155,7 @@ inputs: {
           enable-hot-corners = false;
         };
       };
+      home.packages = [ pkgs.element-desktop ];
       home.stateVersion = "26.05";
     };
 }
