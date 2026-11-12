@@ -2,7 +2,6 @@ inputs: {
   flake.modules.homeManager.home-steven =
     {
       pkgs,
-      config,
       ...
     }:
     {
@@ -20,13 +19,6 @@ inputs: {
           };
         };
       };
-
-      home.file.".config/nvim" = {
-        # Hiermee ga je één map omhoog en dan naar config/nvim
-        source = config.lib.file.mkOutOfStoreSymlink /home/steven/proj/nixos-config/config/nvim;
-        recursive = true;
-      };
-
       programs.fzf = {
         enable = true;
       };
