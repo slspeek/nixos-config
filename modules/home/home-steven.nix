@@ -109,32 +109,33 @@ inputs: {
       programs.alacritty = {
         enable = true;
         settings = {
-          "font" = {
-            "bold" = {
-              "family" = "JetBrainsMono Nerd Font";
-              "style" = "Bold";
+          font = {
+            bold = {
+              family = "JetBrainsMono Nerd Font";
+              style = "Bold";
             };
-            "bold_italic" = {
-              "family" = "JetBrainsMono Nerd Font";
-              "style" = "Bold Italic";
+            bold_italic = {
+              family = "JetBrainsMono Nerd Font";
+              style = "Bold Italic";
             };
-            "italic" = {
-              "family" = "JetBrainsMono Nerd Font";
-              "style" = "Italic";
+            italic = {
+              family = "JetBrainsMono Nerd Font";
+              style = "Italic";
             };
-            "normal" = {
-              "family" = "JetBrainsMono Nerd Font";
-              "style" = "Regular";
+            normal = {
+              family = "JetBrainsMono Nerd Font";
+              style = "Regular";
             };
-            "size" = 17.0;
+            size = 17.0;
           };
-          "window" = {
-            "decorations" = "Full";
-            "decorations_theme_variant" = "Dark";
-            "opacity" = 0.95;
-            "padding" = {
-              "x" = 10;
-              "y" = 10;
+          window = {
+            startup_mode = "Maximized";
+            decorations = "Full";
+            decorations_theme_variant = "Dark";
+            opacity = 0.95;
+            padding = {
+              x = 10;
+              y = 10;
             };
           };
         };
