@@ -50,7 +50,7 @@ inputs: {
           set -s set-clipboard on
         '';
       };
-      programs.vscode = {
+      programs.vscodium = {
         enable = true;
         profiles.default = {
           extensions = with pkgs.vscode-extensions; [
@@ -99,7 +99,7 @@ inputs: {
 
           if command -v tmux &> /dev/null &&
               [ -n "$PS1" ] && [ -z "$TMUX" ] &&
-              [ "$TERM_PROGRAM" != "vscode" ]; then
+              [ "$TERM_PROGRAM" != "vscodium" ]; then
               exec bash -c "
               tmux attach-session -t default ||
                tmux new-session -s default"
@@ -144,7 +144,7 @@ inputs: {
         "org/gnome/shell" = {
           favorite-apps = [
             "firefox.desktop"
-            "code.desktop"
+            "codium.desktop"
             "Alacritty.desktop"
           ];
           disable-user-extensions = false; # Must be false to allow extensions

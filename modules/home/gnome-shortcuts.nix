@@ -41,8 +41,8 @@ _: {
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
         binding = "<Super>c";
-        command = "code";
-        name = "Visual studio code";
+        command = "codium";
+        name = "Visual studio codium";
       };
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {

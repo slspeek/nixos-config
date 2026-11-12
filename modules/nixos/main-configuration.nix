@@ -223,7 +223,7 @@ inputs: {
         tmux
         toml2nix
         trash-cli
-        vscode
+        vscodium
         wget
         wl-clipboard
         zoxide
