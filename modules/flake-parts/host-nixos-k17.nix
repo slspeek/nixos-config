@@ -4,6 +4,7 @@
     specialArgs = { inherit inputs; };
     modules = [
       {
+        users.users."steven".extraGroups = [ "render" ];
         networking.hostName = "nixos-k17"; # Define your hostname.
       }
       inputs.self.modules.nixos.main-configuration
