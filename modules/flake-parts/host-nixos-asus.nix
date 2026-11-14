@@ -5,6 +5,7 @@
     modules = [
       {
         networking.hostName = "nixos-asus"; # Define your hostname.
+        services.openssh.enable = true;
       }
       inputs.self.modules.nixos.main-configuration
       inputs.self.modules.nixos.hardware-asus
