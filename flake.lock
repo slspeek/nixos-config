@@ -134,11 +134,11 @@
         "nvf": "nvf"
       },
       "locked": {
-        "lastModified": 1794514277,
-        "narHash": "sha256-gzxcne81zuOGYlfWQHwFtAiT+bzPi/TdbUi26MS7Iy4=",
+        "lastModified": 1794943199,
+        "narHash": "sha256-hArwvzs0mXNNga7oiDMTEKfnq4lqsYbRpORRHmmP5us=",
         "owner": "slspeek",
         "repo": "nvf",
-        "rev": "ee03113846a03230e2605fa266c9369435c711e3",
+        "rev": "1c5ffbcbdd3c91625fd43c44d61bf49b1d5ac643",
         "type": "github"
       },
       "original": {

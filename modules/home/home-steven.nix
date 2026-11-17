@@ -34,6 +34,7 @@ inputs: {
         extraConfig = ''
           # Reload the file with Prefix r.
           bind r source-file ~/.tmux.conf \; display "Reloaded!"
+          set -s extended-keys on
           setw -g monitor-activity on
           set -g visual-activity on
           set -g history-limit 100000
@@ -122,7 +123,6 @@ inputs: {
             startup_mode = "Maximized";
             decorations = "Full";
             decorations_theme_variant = "Dark";
-            opacity = 0.95;
             padding = {
               x = 10;
               y = 10;
@@ -130,6 +130,18 @@ inputs: {
           };
         };
       };
+      programs.alacritty.settings.keyboard.bindings = [
+        {
+          key = "Tab";
+          mods = "Control";
+          chars = "\\x1b[27;5;9~";
+        }
+        {
+          key = "Tab";
+          mods = "Control|Shift";
+          chars = "\\x1b[27;6;9~";
+        }
+      ];
       dconf.enable = true;
       dconf.settings = {
         "org/gnome/shell" = {
