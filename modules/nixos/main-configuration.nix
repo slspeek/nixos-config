@@ -92,6 +92,13 @@ _inputs: {
 
       # Enable CUPS to print documents.
       services.printing.enable = true;
+      services.printing.drivers = with pkgs; [
+        #cups-filters
+        brlaser
+        #foomatic-db-ppds
+        #ghostscript
+        gutenprint
+      ];
 
       # Enable sound with pipewire.
       services.pulseaudio.enable = false;
